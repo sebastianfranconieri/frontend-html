@@ -28,6 +28,27 @@
       border-bottom: 1px solid #fff;
     }
 
+    .logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-around;
+      gap: 20px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
   header ul {
       list-style: none;
       display: flex;
@@ -57,7 +78,8 @@
    .cards {
       display: flex;
       gap: 20px;
-      padding: 40px 30px;
+      padding: 90px 90px;
+      flex-wrap:none;
     }
  
    .card {
@@ -81,7 +103,7 @@
     .content {
       display: flex;
       gap: 20px;
-      padding: 0 30px 40px 30px;
+      padding: 80px 90px;
     }
 
     article {
@@ -90,6 +112,11 @@
       padding: 20px;
     }
 
+    .article-header {
+      padding: 14px;
+      font-size: 2.2rem;
+    }
+    
     .article-flex {
       display: flex;
       flex-wrap: wrap;
@@ -97,11 +124,14 @@
     }
 
     .flex {
-    width: 50%;
-    border: 1px solid white;
-    padding: 15px;
+      width: 50%;
+      padding: 15px;
     }
 
+    .flex p {
+      margin-bottom: 15px;
+    }
+    
     .flex img {
     width: 100%;
     display: block;
@@ -114,11 +144,16 @@
     aside {
       flex: 1;
       border: 1px solid #fff;
-      padding: 20px;
+      padding: 30px;
     }
  
     aside h2 {
-      margin-bottom: 10px;
+      margin-bottom: 50px;
+      font-size: 3.5rem;
+    }
+
+    aside p {
+      margin-bottom: 20px;
     }
 
     footer {
@@ -154,12 +189,15 @@
 </head>
 <body>
  <header>
-    <a class="logo" href="#">Sauco Films</a>
+    <a class="logo" href="#">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="Sauco Films Logo">
+        <span>Sauco Films</span>
+    </a>
     <nav>
       <ul>
         <li><a href="#cards">Services</a></li>
         <li><a href="#article">Our Work</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:contact@saucofilms.com">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -194,25 +232,35 @@
 
     <section class="content">
     <article id="article">
-        <h2>Our Work</h2>
-        <p>Check out some of our recent projects</p>
+        <div class="article-header">
+            <h2>Our Work</h2>
+            <p>Check out some of our recent projects and see the quality of our work.</p>
+        </div>
 
         <div class="article-flex">
-        <div class="flex">
-            <p>Text of the first block.</p>
-        </div>
-        <div class="flex">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Film_strip.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original" alt="Film negative image">
-        </div>
-        <div class="flex">
-            <p>Text of the last block, which joins the two bottom squares.</p>
-        </div>
+            <div class="flex">
+                <p>Our new documentary about the impact of climate change on coastal communities explores the challenges and solutions facing these vulnerable ecosystems. This project highlights the urgent need for sustainable practices and community resilience. The film showcases the stories of individuals and communities affected by these environmental changes.</p>
+                <p>We are proud to present our latest short film, which delves into the complexities of human relationships and the power of empathy. Through compelling storytelling and stunning visuals, we aim to evoke deep emotional responses from our audience.</p>
+                <p>In our upcoming feature film, we explore the intersection of technology and society, examining how advancements in artificial intelligence are reshaping our world. This thought-provoking narrative challenges viewers to consider the ethical implications of innovation.</p>
+                <p>Our team is currently working on a series of promotional videos for various brands, showcasing their products and services in creative and engaging ways. These projects demonstrate our versatility and commitment to delivering high-quality content across different media platforms.</p>
+            </div>
+            <div class="flex">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Film_strip.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original" alt="Film negative image">
+            </div>
+            <div class="flex">
+                <p>We are excited to announce our collaboration with a renowned director on an upcoming feature film that promises to captivate audiences with its unique narrative and visual style. Stay tuned for more updates on this highly anticipated project. This is an exciting opportunity for us to work with a talented artist and bring their vision to life. On top of that, we are committed to delivering exceptional content that resonates with audiences worldwide.</p>
+                <p>Our team is dedicated to exploring new storytelling techniques and pushing the boundaries of traditional filmmaking. We continuously seek innovative ways to engage viewers and create memorable cinematic experiences that leave a lasting impact.</p>
+                <p>In addition to our film projects, we are also committed to supporting emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
+                <p>We invite you to explore our portfolio and discover the diverse range of projects we have undertaken. From documentaries to feature films, our work reflects our passion for storytelling and our dedication to delivering exceptional content that resonates with audiences worldwide.</p> 
+            </div>
         </div>
     </article>
 
     <aside id="about">
         <h2>About</h2>
-        <p>Sauce Films is a film production company dedicated to creating compelling visual narratives. Our team of professionals is committed to delivering high-quality content that resonates with audiences worldwide.</p>
+        <p>Sauce Films is a film production company dedicated to creating compelling visual narratives. Our team of professionals is committed to delivering high-quality content that resonates with audiences worldwide. We specialize in various aspects of film production, including pre-production planning, on-set production, and post-production editing. Our goal is to bring your vision to life with creativity and precision.</p>
+        <p>We believe in the power of storytelling to inspire, educate, and entertain. Our projects span a wide range of genres and formats, from feature films and documentaries to promotional videos and short films. We work closely with our clients to understand their objectives and craft tailored solutions that meet their needs.</p>
+        <p>At Sauce Films, we are passionate about pushing the boundaries of traditional filmmaking. We continuously explore new techniques and technologies to enhance our storytelling capabilities. Our team is dedicated to staying at the forefront of innovation in the film industry.</p>
     </aside>
     </section>
 
@@ -220,7 +268,10 @@
 
   <footer>
     <div class="footer-left">
-      <a class="logo" href="#">Sauco Films</a>
+      <a class="logo" href="#">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="Sauco Films Logo">
+        <span>Sauco Films</span>
+      </a>
       <p>© 2026 Sauco Films</p>
   
    </div>

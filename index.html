@@ -49,30 +49,41 @@
       color: white;
     }
 
-  header ul {
+    header ul {
       list-style: none;
       display: flex;
       gap: 25px;
     }
 
-  .hero {
+    .hero {
+      position: relative;
       min-height: calc(100vh - 70px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+    }
+
+    .foto-hero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .hero-texto {
+      position: absolute;
       text-align: center;
-      padding: 40px 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
  
-  .hero h1 {
-      font-size: 3rem;
+    .hero h1 {
+      font-size: 5rem;
       margin-bottom: 20px;
     }
  
-  .hero p {
-      max-width: 600px;
-      font-size: 1.1rem;
+    .hero p {
+      max-width: 700px;
+      font-size: 1.7rem;
     }
 
    .cards {
@@ -103,7 +114,8 @@
     .content {
       display: flex;
       gap: 20px;
-      padding: 80px 90px;
+      padding: 20px 90px;
+      margin-bottom: 80px;
     }
 
     article {
@@ -159,8 +171,8 @@
     footer {
     display: flex;
     justify-content: space-between;
-    padding: 30px;
     border-top: 1px solid white;
+    padding: 30px;
     }
 
     .footer-left,
@@ -204,10 +216,11 @@
 
   <main>
     <section class="hero">
-      <h1>Sauco Films</h1>
-      <p>
-        Film production company specializing in creating captivating visual stories. We bring your ideas to life with creativity and professionalism.
-      </p>
+      <img class="foto-hero" src="https://www.sae.edu/gbr/wp-content/uploads/sites/7/2023/12/Future-of-Film-SAE-1-1920x1256.jpg" alt="On Set Film Production">
+      <div class="hero-texto">
+        <h1>Sauco Films</h1>
+        <p>Film production company specializing in creating captivating visual stories. We bring your ideas to life with creativity and professionalism.</p>
+      </div>
     </section>
 
      <section class="cards" id="cards">
@@ -241,8 +254,7 @@
             <div class="flex">
                 <p>Our new documentary about the impact of climate change on coastal communities explores the challenges and solutions facing these vulnerable ecosystems. This project highlights the urgent need for sustainable practices and community resilience. The film showcases the stories of individuals and communities affected by these environmental changes.</p>
                 <p>We are proud to present our latest short film, which delves into the complexities of human relationships and the power of empathy. Through compelling storytelling and stunning visuals, we aim to evoke deep emotional responses from our audience.</p>
-                <p>In our upcoming feature film, we explore the intersection of technology and society, examining how advancements in artificial intelligence are reshaping our world. This thought-provoking narrative challenges viewers to consider the ethical implications of innovation.</p>
-                <p>Our team is currently working on a series of promotional videos for various brands, showcasing their products and services in creative and engaging ways. These projects demonstrate our versatility and commitment to delivering high-quality content across different media platforms.</p>
+                <p>In our upcoming feature film, we explore the intersection of technology and society, examining how advancements in artificial intelligence are reshaping our world. This thought-provoking narrative challenges viewers to consider the ethical implications of innovation. This is an exciting opportunity for us to work with a talented artist and bring their vision to life and create a memorable cinematic experience for our audience.</p>
             </div>
             <div class="flex">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Film_strip.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original" alt="Film negative image">
@@ -252,6 +264,14 @@
                 <p>Our team is dedicated to exploring new storytelling techniques and pushing the boundaries of traditional filmmaking. We continuously seek innovative ways to engage viewers and create memorable cinematic experiences that leave a lasting impact.</p>
                 <p>In addition to our film projects, we are also committed to supporting emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
                 <p>We invite you to explore our portfolio and discover the diverse range of projects we have undertaken. From documentaries to feature films, our work reflects our passion for storytelling and our dedication to delivering exceptional content that resonates with audiences worldwide.</p> 
+            </div>
+             <div class="flex">
+                <img src="https://glcoverage.com/wp-content/uploads/2024/07/pexels-kyleloftusstudios-3379934.jpg" alt="Camera Operator on set">
+            </div>
+             <div class="flex">
+                <p>We are thrilled to share our latest collaboration with a talented cinematographer on an upcoming short film that explores the complexities of human emotions and relationships. This project promises to deliver a visually stunning and emotionally resonant experience for audiences.</p>
+                <p>Our team is committed to delivering high-quality content that pushes the boundaries of traditional filmmaking. We continuously explore new techniques and technologies to enhance our storytelling capabilities and create immersive cinematic experiences.</p>
+                <p>In addition to our film projects, we are also dedicated to supporting the growth and development of emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
             </div>
         </div>
     </article>
@@ -272,17 +292,16 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="Sauco Films Logo">
         <span>Sauco Films</span>
       </a>
-      <p>© 2026 Sauco Films</p>
-  
+      <a href="mailto:contact@saucofilms.com">contact@saucofilms.com</a>
    </div>
     <div class="footer-right">
-      <p><a href="mailto:contact@saucofilms.com">Contact contact@saucofilms.com</a></p>
-          <nav>
+      <nav>
         <ul>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Terms and conditions</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms and conditions</a></li>
         </ul>
       </nav>
+      <p>© 2026 Sauco Films</p>
     </div>
   </footer>
 

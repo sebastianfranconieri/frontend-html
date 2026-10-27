@@ -6,12 +6,12 @@
     <title>Sauco Films</title>
 
  <style>
-    * {margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+  * {margin: 0;
+     padding: 0;
+     box-sizing: border-box;
     }
 
- body {
+  body {
       background-color: #000;
       color: #fff;
       font-family: Helvetica, sans-serif;
@@ -19,7 +19,7 @@
       line-height: 1.5;
     }
 
- header {
+  header {
       height: 70px;
       padding: 0 30px;
       display: flex;
@@ -28,10 +28,125 @@
       border-bottom: 1px solid #fff;
     }
 
- header ul {
+  header ul {
       list-style: none;
       display: flex;
       gap: 25px;
+    }
+
+  .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+ 
+  .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+ 
+  .hero p {
+      max-width: 600px;
+      font-size: 1.1rem;
+    }
+
+   .cards {
+      display: flex;
+      gap: 20px;
+      padding: 40px 30px;
+    }
+ 
+   .card {
+      flex: 1;
+      border: 1px solid #fff;
+      padding: 30px;
+    }
+ 
+   .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+ 
+   .card h2 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      display: flex;
+      gap: 20px;
+      padding: 0 30px 40px 30px;
+    }
+
+    article {
+      flex: 4;
+      border: 1px solid white;
+      padding: 20px;
+    }
+
+    .article-flex {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .flex {
+    width: 50%;
+    border: 1px solid white;
+    padding: 15px;
+    }
+
+    .flex img {
+    width: 100%;
+    display: block;
+    }
+
+    .flex:nth-child(3) {
+    width: 100%;
+    }
+
+    aside {
+      flex: 1;
+      border: 1px solid #fff;
+      padding: 20px;
+    }
+ 
+    aside h2 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    border-top: 1px solid white;
+    }
+
+    .footer-left,
+    .footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    }
+
+    .footer-right {
+    text-align: right;
+    }
+
+    footer ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    }
+
+    footer a {
+    color: white;
     }
 
  </style>
@@ -59,42 +174,64 @@
 
      <section class="cards" id="cards">
       <div class="card">
-        <img src="https://picsum.photos/400/250?random=1" alt="Pre-Production">
+        <img src="https://www.albema-france.fr/data/uploads/2021/07/pre-production.jpg" alt="Pre-Production">
         <h2>Pre-Production</h2>
         <p>Planning and preparation phase for the film project.</p>
       </div>
  
       <div class="card">
-        <img src="https://picsum.photos/400/250?random=2" alt="Production">
+        <img src="https://www.adorama.com/alc/wp-content/uploads/2024/07/Ready-for-a-Cinema-Camera_Heres-What-to-Look-For.jpg" alt="Production">
         <h2>Production</h2>
         <p>Execution phase where the film is shot under the direction of the filmmaker.</p>
       </div>
  
       <div class="card">
-        <img src="https://picsum.photos/400/250?random=3" alt="Post-Production">
+        <img src="https://www.vidyard.com/wp-content/uploads/video-post-production-1982x1114-2.jpg" alt="Post-Production">
         <h2>Post-Production</h2>
         <p>Post-production phase where the film is edited and enhanced.</p>
       </div>
     </section>
 
+    <section class="content">
+    <article id="article">
+        <h2>Our Work</h2>
+        <p>Check out some of our recent projects</p>
 
+        <div class="article-flex">
+        <div class="flex">
+            <p>Text of the first block.</p>
+        </div>
+        <div class="flex">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Film_strip.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original" alt="Film negative image">
+        </div>
+        <div class="flex">
+            <p>Text of the last block, which joins the two bottom squares.</p>
+        </div>
+        </div>
+    </article>
+
+    <aside id="about">
+        <h2>About</h2>
+        <p>Sauce Films is a film production company dedicated to creating compelling visual narratives. Our team of professionals is committed to delivering high-quality content that resonates with audiences worldwide.</p>
+    </aside>
+    </section>
 
   </main>
 
   <footer>
     <div class="footer-left">
       <a class="logo" href="#">Sauco Films</a>
-      <nav>
+      <p>© 2026 Sauco Films</p>
+  
+   </div>
+    <div class="footer-right">
+      <p><a href="mailto:contact@saucofilms.com">Contact contact@saucofilms.com</a></p>
+          <nav>
         <ul>
-            <li><a href="#">Site map</a></li>
             <li><a href="#">Privacy policy</a></li>
             <li><a href="#">Terms and conditions</a></li>
         </ul>
       </nav>
-   </div>
-    <div class="footer-right">
-      <p><a href="mailto:contact@saucofilms.com">Contact contact@saucofilms.com</a></p>
-      <p>2026 Sauco Films</p>
     </div>
   </footer>
 

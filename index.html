@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sauco Films is a film production company specializing in creating captivating visual stories. We bring your ideas to life with creativity and professionalism.">
     <meta name="keywords" content="film production, video production, filmmaking, Sauco Films, visual storytelling, pre-production, production, post-production">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
     <title>Sauco Films</title>
 
  <style>
@@ -31,6 +34,7 @@
     }
 
     .logo {
+      font-family: "Lacquer", cursive;
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -38,7 +42,7 @@
       gap: 20px;
       text-decoration: none;
       color: white;
-      font-size: 1.2rem;
+      font-size: 2.2rem;
     }
 
     .logo img {
@@ -82,11 +86,15 @@
     }
  
     .hero h1 {
-      font-size: 5rem;
+      font-family: "Lacquer", cursive;
+      font-size: 10rem;
       margin-bottom: 20px;
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0);
+      text-shadow: 0 0 10px #111, 0 0 20px #fff, 0 0 30px #111, 0 0 40px #111, 0 0 50px #111, 0 0 60px #111, 0 0 70px #111;
     }
  
     .hero p {
+      margin: 0 auto;
       max-width: 700px;
       font-size: 1.7rem;
     }
@@ -112,7 +120,8 @@
     }
  
    .card h2 {
-      font-size: 1.3rem;
+      font-family: "Lacquer", cursive;
+      font-size: 2.5rem;
       margin-bottom: 10px;
     }
 
@@ -132,6 +141,11 @@
     .article-header {
       padding: 14px;
       font-size: 2.2rem;
+    }
+
+    .article-header h3 {
+      font-family: "Lacquer", cursive;
+      font-size: 4.5rem;
     }
     
     .article-flex {
@@ -166,19 +180,148 @@
       width: 100%;
     }
 
-    aside {
-      flex: 1;
-      border: 1px solid #fff;
-      padding: 30px;
-    }
- 
-    aside h2 {
-      margin-bottom: 50px;
-      font-size: 3.5rem;
+    .film-roll {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+      width: 40px;
+      contain: size;
+      z-index: -1;
+      overflow: hidden;
     }
 
-    aside p {
-      margin-bottom: 20px;
+    .hole {
+      flex-shrink: 0;
+      width: 20px;
+      height: 15px;
+      border: 2px solid #fff;
+      border-radius: 3px;
+    }
+
+    .hole:nth-child(even) {
+      visibility: hidden;
+    }
+
+  .side-nav {
+      width:80px;
+      height: 100%;
+      position: sticky;
+      top: 20px;
+      padding: 30px 15px;
+      background: linear-gradient(135deg, rgba(243, 114, 9, 0.3), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      transition: width 0.5s ease;
+      overflow: hidden; 
+    }
+
+    .user{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      font-size: 14px;
+      padding: 10px 0;
+      border-radius: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .user div{
+      opacity: 0;
+      transition: all 0.5s ease;
+      white-space: nowrap;
+      margin-left: 15px;
+    }
+
+    .user h2{
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.5s ease;
+    }
+
+    .user-img{
+      min-width: 40px;
+      border-radius: 50%;
+      margin-left: 5px;
+      filter: invert(100%);
+      transition: all 0.5s ease;
+    }
+
+    .star-img{
+      width: 20px;
+      display: none;
+      transition: all 0.5s ease;
+    }
+
+    .side-nav ul{
+      list-style: none;
+      padding: 15px 0;
+    }
+
+    .side-nav ul li{
+      margin: 25px 0;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      display: flex;
+      color: white;
+      transition: all 0.5s ease;
+    }
+
+    .side-nav ul li img{
+      min-width: 30px;
+      margin-left: 5px;
+      filter: invert(100%);
+      margin-left: 5px;
+    }
+
+    .side-nav ul li p{
+      white-space: nowrap;
+      opacity: 0;
+      transition: all 0.5s ease;
+
+    }
+
+    .side-nav:hover{
+      width: 225px;
+    }
+
+    .side-nav:hover .user{
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      justify-content: flex-start;
+    }
+
+        .side-nav:hover .user{
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    .side-nav:hover .starimg{
+      display: block;
+    }
+
+    .side-nav:hover .user-img{
+      margin: 0;
+    }
+
+    .side-nav:hover .user div,
+    .side-nav:hover ul li p{
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+
+    .side-nav:hover ul li img{
+      margin-right: 10px;
     }
 
     footer {
@@ -310,11 +453,71 @@
         <p>Post-production phase where the film is edited and enhanced.</p>
       </div>
     </section>
-
+    
     <section class="content">
+
+      <h2 hidden>Main Content Layout</h2>
+        
+      <div class="film-roll">
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          </div>
+
+
         <article id="article">
             <div class="article-header">
-                <h2>Our Work</h2>
+                <h3>Our Portfolio</h3>
                 <p>Check out some of our recent projects and see the quality of our work.</p>
             </div>
 
@@ -344,12 +547,23 @@
             </div>
         </article>
 
-        <aside id="about">
-            <h2>About</h2>
-            <p>Sauco Films is a film production company dedicated to creating compelling visual narratives. Our team of professionals is committed to delivering high-quality content that resonates with audiences worldwide. We specialize in various aspects of film production, including pre-production planning, on-set production, and post-production editing. Our goal is to bring your vision to life with creativity and precision.</p>
-            <p>We believe in the power of storytelling to inspire, educate, and entertain. Our projects span a wide range of genres and formats, from feature films and documentaries to promotional videos and short films. We work closely with our clients to understand their objectives and craft tailored solutions that meet their needs.</p>
-            <p>At Sauco Films, we are passionate about pushing the boundaries of traditional filmmaking. We continuously explore new techniques and technologies to enhance our storytelling capabilities. Our team is dedicated to staying at the forefront of innovation in the film industry.</p>
-        </aside>
+        <div class="side-nav">
+            <div class ="user">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/stars.svg" class="user-img" alt="User Profile">
+              <div>
+                <h4>Ren & Sebastian</h4>
+                <p>Meet the crew!</p>
+              </div>
+              </div>
+              <ul>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/person-vcard-fill.svg" alt="About Page"><p>About Us</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/linkedin.svg" alt="LinkedIn"><p>LinkedIn</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/envelope-fill.svg" alt="Email"><p>Email</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/telephone-fill.svg" alt="Phone"><p>Phone</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/chat-quote-fill.svg" alt="Customer Feedback"><p>Customer Stories</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/camera-reels-fill.svg" alt="Producer"><p>Become a Producer</p></li>
+              </ul>
+            </div>
     </section>
   </main>
 

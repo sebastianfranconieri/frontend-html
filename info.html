@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sauco Films is a film production company specializing in creating captivating visual stories. We bring your ideas to life with creativity and professionalism.">
+    <meta name="keywords" content="film production, video production, filmmaking, Sauco Films, visual storytelling, pre-production, production, post-production">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=block" rel="stylesheet">
+    <title>Sauco Films</title>
+
+ <style>
+  * {margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+    }
+
+  body {
+      background-color: #000;
+      color: #fff;
+      font-family: Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+  header {
+      height: 70px;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #fff;
+    }
+
+    .logo {
+      font-family: "Lacquer", cursive;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-around;
+      gap: 20px;
+      text-decoration: none;
+      color: white;
+      font-size: 2.2rem;
+      animation: cinematicReveal 1.5s ease forwards;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+    }
+
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 70px);
+      display: grid;
+      place-items: center; 
+      text-align: center;
+    }
+
+    .foto-hero {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    .hero-texto {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+    }
+ 
+    .hero h1 {
+      font-family: "Lacquer", cursive;
+      font-size: 10rem;
+      margin-bottom: 20px;
+      -webkit-text-stroke: 2px rgba(255, 255, 255, 0);
+      text-shadow: 0 0 10px #111, 0 0 20px #fff, 0 0 30px #111, 0 0 40px #111, 0 0 50px #111, 0 0 60px #111, 0 0 70px #111;
+      animation: cinematicReveal 1.5s ease forwards;
+    }
+ 
+    .hero p {
+      margin: 0 auto;
+      max-width: 700px;
+      font-size: 1.7rem;
+    }
+
+   .cards {
+      display: flex;
+      gap: 20px;
+      padding: 90px 90px;
+      flex-wrap:nowrap;
+    }
+ 
+   .card {
+      flex: 1;
+      border: 1px solid #fff;
+      padding: 30px;
+    }
+ 
+   .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+ 
+   .card h2 {
+      font-family: "Lacquer", cursive;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .content {
+      display: flex;
+      gap: 20px;
+      padding: 20px 90px;
+      margin-bottom: 80px;
+    }
+
+    article {
+      flex: 4;
+      border: 1px solid white;
+      padding: 20px;
+    }
+
+    .article-header {
+      padding: 14px;
+      font-size: 2.2rem;
+    }
+
+    .article-header h3 {
+      font-family: "Lacquer", cursive;
+      font-size: 4.5rem;
+    }
+    
+    .article-flex {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      padding: 15px;
+    }
+
+    .flex p {
+      margin-bottom: 15px;
+    }
+    
+    .flex img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      margin-top: auto;
+      margin-bottom: auto;
+      object-fit: cover;
+    }
+
+    .flex:nth-child(3) {
+      width: 100%;
+    }
+
+    .film-roll {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 10px;
+      width: 40px;
+      contain: size;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hole {
+      flex-shrink: 0;
+      width: 20px;
+      height: 15px;
+      border: 2px solid #fff;
+      border-radius: 3px;
+    }
+
+    .hole:nth-child(even) {
+      visibility: hidden;
+    }
+
+  .side-nav {
+      width:80px;
+      height: 100%;
+      position: sticky;
+      top: 20px;
+      padding: 30px 15px;
+      background: linear-gradient(135deg, rgba(243, 114, 9, 0.3), rgba(255, 255, 255, 0.05));
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      transition: width 0.5s ease;
+      overflow: hidden; 
+      border-radius: 10px;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      font-size: 14px;
+      padding: 10px 0;
+      border-radius: 8px;
+      margin-left: auto;
+      margin-right: auto;
+      overflow: hidden;
+      transition: all 0.5s ease;
+    }
+
+    .intro .nav-text-group {
+      opacity: 0;
+      transition: all 0.5s ease;
+      white-space: nowrap;
+      margin-left: 15px;
+    }
+
+    .intro strong {
+      font-size: 15px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.5s ease;
+    }
+
+    .star-img{
+      min-width: 40px;
+      border-radius: 50%;
+      margin-left: 5px;
+      filter: invert(100%);
+      transition: all 0.5s ease;
+    }
+
+    .side-nav ul{
+      list-style: none;
+      padding: 15px 0;
+    }
+
+    .side-nav ul li{
+      margin: 25px 0;
+      align-items: center;
+      justify-content: flex-start;
+      cursor: pointer;
+      display: flex;
+      color: white;
+      transition: all 0.5s ease;
+    }
+
+    .side-nav ul li img{
+      min-width: 30px;
+      margin-left: 5px;
+      filter: invert(100%);
+      margin-left: 5px;
+    }
+
+    .side-nav ul li p{
+      white-space: nowrap;
+      opacity: 0;
+      transition: all 0.5s ease;
+
+    }
+
+    .side-nav:hover{
+      width: 225px;
+    }
+
+    .side-nav:hover .intro{
+      width: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      justify-content: flex-start;
+    }
+
+    .side-nav:hover .star-img{
+      display: block;
+    }
+
+    .side-nav:hover .intro div,
+    .side-nav:hover ul li p{
+      opacity: 1;
+      transition-delay: 0.1s;
+    }
+
+    .side-nav:hover ul li img{
+      margin-right: 10px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid white;
+      padding: 30px;
+    }
+
+    .footer-left,
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .footer-right {
+      text-align: right;
+    }
+
+    footer ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    footer a {
+      color: white;
+    }
+
+
+    @media screen and (max-width: 640px) {
+      header {
+        padding: 0 15px;
+      }
+
+      .logo { 
+        font-size: 1.25rem;
+        gap: 8px;
+        white-space: nowrap;
+      }
+
+      .logo img {
+        height: 24px;
+      }
+
+      header ul {
+        gap: 14px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        padding: 0 30px;
+      }
+
+      .cards {
+        padding: 40px 20px;
+        flex-direction: column;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card h2 {
+        font-size: 1.85rem;
+        white-space: nowrap;
+      }
+
+      article {
+        padding: 15px;
+      }
+
+      .article-header {
+        padding: 10px;
+        font-size: 1.15rem;
+      }
+
+      .article-header h3 {
+        font-size: 2.3rem;
+        white-space: nowrap;
+        margin-bottom: 8px;
+      }
+
+      .article-header p {
+        color: rgba(243, 114, 9, .9)
+      }
+
+      .content {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .flex {
+        width: 100% !important;
+      }
+
+      .film-roll {
+      display: none;
+      }
+
+      .side-nav {
+        position: static;
+        width: 100%;
+        height: 75px;
+        transition: height 0.5s ease;
+        padding: 15px 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+      }
+
+      .side-nav:hover {
+        width: 100%;
+      }
+
+      .side-nav .intro {
+        justify-content: flex-start;
+        flex-shrink: 0;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .side-nav .intro .nav-text-group {
+        opacity: 1;
+        margin-left: 15px;
+      }
+
+      .side-nav ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0;
+        margin-top: 22px;
+        opacity: 0;
+        flex-shrink: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .side-nav ul li {
+        margin: 0;
+      }
+
+      .side-nav ul li p {
+        display: none;
+      }
+
+      .side-nav ul li img {
+        min-width: 25px;
+        margin: 0;
+      }
+
+      .side-nav:has(#mobile-toggle:checked) {
+        height: 135px;
+      }
+
+      .side-nav:has(#mobile-toggle:checked) ul {
+        opacity: 1;
+        transition-delay: 0.15s;
+        pointer-events: auto;
+      }
+
+      .side-nav:has(#mobile-toggle:checked) .intro {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 5px 10px;
+      }
+
+      .side-nav:hover .intro {
+        background: transparent;
+        backdrop-filter: none;
+      }
+
+      footer {
+        padding: 30px 20px;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+
+      .footer-left .logo {
+        justify-content: center;
+      }
+
+      .footer-right {
+        text-align: center;
+      }
+
+      .footer-right ul {
+        justify-content: center;
+      }
+    }
+
+
+    @keyframes cinematicReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+ </style>
+
+</head>
+
+<body>
+ <header>
+    <a class="logo" href="#">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="Sauco Films Logo">
+        <span>Sauco Films</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#cards">Services</a></li>
+        <li><a href="#article">Our Work</a></li>
+        <li><a href="mailto:contact@saucofilms.com">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="foto-hero" src="https://www.sae.edu/gbr/wp-content/uploads/sites/7/2023/12/Future-of-Film-SAE-1-1920x1256.jpg" alt="On Set Film Production">
+      <div class="hero-texto">
+        <h1>Sauco Films</h1>
+        <p>Film production company specializing in creating captivating visual stories. We bring your ideas to life with creativity and professionalism.</p>
+      </div>
+    </section>
+
+     <section class="cards" id="cards">
+      <div class="card">
+        <img src="https://www.albema-france.fr/data/uploads/2021/07/pre-production.jpg" alt="Pre-Production">
+        <h2>Pre-Production</h2>
+        <p>Planning and preparation phase for the film project.</p>
+      </div>
+ 
+      <div class="card">
+        <img src="https://www.adorama.com/alc/wp-content/uploads/2024/07/Ready-for-a-Cinema-Camera_Heres-What-to-Look-For.jpg" alt="Production">
+        <h2>Production</h2>
+        <p>Execution phase where the film is shot under the direction of the filmmaker.</p>
+      </div>
+ 
+      <div class="card">
+        <img src="https://www.vidyard.com/wp-content/uploads/video-post-production-1982x1114-2.jpg" alt="Post-Production">
+        <h2>Post-Production</h2>
+        <p>Post-production phase where the film is edited and enhanced.</p>
+      </div>
+    </section>
+    
+    <section class="content">
+
+      <h2 hidden>Main Content Layout</h2>
+        
+      <div class="film-roll">
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          <div class="hole"></div>
+          </div>
+
+
+        <article id="article">
+            <div class="article-header">
+                <h3>Our Portfolio</h3>
+                <p>Check out some of our recent projects and see the quality of our work.</p>
+            </div>
+
+            <div class="article-flex">
+                <div class="flex">
+                    <p>Our new documentary about the impact of climate change on coastal communities explores the challenges and solutions facing these vulnerable ecosystems. This project highlights the urgent need for sustainable practices and community resilience. The film showcases the stories of individuals and communities affected by these environmental changes.</p>
+                    <p>We are proud to present our latest short film, which delves into the complexities of human relationships and the power of empathy. Through compelling storytelling and stunning visuals, we aim to evoke deep emotional responses from our audience.</p>
+                    <p>In our upcoming feature film, we explore the intersection of technology and society, examining how advancements in artificial intelligence are reshaping our world. This thought-provoking narrative challenges viewers to consider the ethical implications of innovation. This is an exciting opportunity for us to work with a talented artist and bring their vision to life and create a memorable cinematic experience for our audience.</p>
+                </div>
+                <div class="flex">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Film_strip.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original" alt="Film negative image">
+                </div>
+                <div class="flex">
+                    <p>We are excited to announce our collaboration with a renowned director on an upcoming feature film that promises to captivate audiences with its unique narrative and visual style. Stay tuned for more updates on this highly anticipated project. This is an exciting opportunity for us to work with a talented artist and bring their vision to life. On top of that, we are committed to delivering exceptional content that resonates with audiences worldwide.</p>
+                    <p>Our team is dedicated to exploring new storytelling techniques and pushing the boundaries of traditional filmmaking. We continuously seek innovative ways to engage viewers and create memorable cinematic experiences that leave a lasting impact.</p>
+                    <p>In addition to our film projects, we are also committed to supporting emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
+                    <p>We invite you to explore our portfolio and discover the diverse range of projects we have undertaken. From documentaries to feature films, our work reflects our passion for storytelling and our dedication to delivering exceptional content that resonates with audiences worldwide.</p> 
+                </div>
+                <div class="flex">
+                    <img src="https://glcoverage.com/wp-content/uploads/2024/07/pexels-kyleloftusstudios-3379934.jpg" alt="Camera Operator on set">
+                </div>
+                <div class="flex">
+                    <p>We are thrilled to share our latest collaboration with a talented cinematographer on an upcoming short film that explores the complexities of human emotions and relationships. This project promises to deliver a visually stunning and emotionally resonant experience for audiences.</p>
+                    <p>Our team is committed to delivering high-quality content that pushes the boundaries of traditional filmmaking. We continuously explore new techniques and technologies to enhance our storytelling capabilities and create immersive cinematic experiences.</p>
+                    <p>In addition to our film projects, we are also dedicated to supporting the growth and development of emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
+                </div>
+            </div>
+        </article>
+
+        <div class="side-nav">
+          <input type="checkbox" id="mobile-toggle" style="display:none;">
+            <label class ="intro" for="mobile-toggle">
+              <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/stars.svg" class="star-img" alt="Star Icon">
+              <span class="nav-text-group">
+                <strong>Ren & Sebastian</strong>
+                <span>Meet the crew!</span>
+              </span>
+            </label>
+              <ul>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/person-vcard-fill.svg" alt=""><p>About Us</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/linkedin.svg" alt=""><p>LinkedIn</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/envelope-fill.svg" alt=""><p>Email</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/telephone-fill.svg" alt=""><p>Phone</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/chat-quote-fill.svg" alt=""><p>Customer Stories</p></li>
+                <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/camera-reels-fill.svg" alt=""><p>Become a Producer</p></li>
+              </ul>
+            </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <a class="logo" href="#">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="Sauco Films Logo">
+        <span>Sauco Films</span>
+      </a>
+      <a href="mailto:contact@saucofilms.com">contact@saucofilms.com</a>
+    </div>
+    <div class="footer-right">
+      <nav>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms and conditions</a></li>
+        </ul>
+      </nav>
+      <p>© 2026 Sauco Films</p>
+    </div>
+  </footer>
+
+</body>
+</html>

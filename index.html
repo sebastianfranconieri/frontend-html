@@ -218,9 +218,10 @@
       flex-direction: column;
       transition: width 0.5s ease;
       overflow: hidden; 
+      border-radius: 10px;
     }
 
-    .intro{
+    .intro {
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -234,14 +235,14 @@
       transition: all 0.5s ease;
     }
 
-    .intro div{
+    .intro .nav-text-group {
       opacity: 0;
       transition: all 0.5s ease;
       white-space: nowrap;
       margin-left: 15px;
     }
 
-    .intro h2{
+    .intro strong {
       font-size: 15px;
       font-weight: 600;
       white-space: nowrap;
@@ -340,36 +341,154 @@
 
 
     @media screen and (max-width: 640px) {
+      header {
+        padding: 0 15px;
+      }
+
+      .logo { 
+        font-size: 1.25rem;
+        gap: 8px;
+        white-space: nowrap;
+      }
+
+      .logo img {
+        height: 24px;
+      }
+
+      header ul {
+        gap: 14px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
       .hero h1 {
         font-size: 4rem;
       }
 
       .hero p {
         font-size: 1.1rem;
-        padding: 0 50px;
+        padding: 0 30px;
       }
 
       .cards {
-        padding: 50px 40px;
+        padding: 40px 20px;
         flex-direction: column;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .card h2 {
+        font-size: 1.85rem;
+        white-space: nowrap;
+      }
+
+      article {
+        padding: 15px;
+      }
+
+      .article-header {
+        padding: 10px;
+        font-size: 1.15rem;
+      }
+
+      .article-header h3 {
+        font-size: 2.3rem;
+        white-space: nowrap;
+        margin-bottom: 8px;
+      }
+
+      .article-header p {
+        color: rgba(243, 114, 9, .9)
       }
 
       .content {
         flex-direction: column;
-        padding: 20px;
+        padding: 15px;
       }
 
       .flex {
         width: 100% !important;
       }
 
-      header {
-        padding: 0 20px;
+      .film-roll {
+      display: none;
       }
 
-      header ul {
-        gap: 15px;
-        font-size: 0.85rem;
+      .side-nav {
+        position: static;
+        width: 100%;
+        height: 75px;
+        transition: height 0.5s ease;
+        padding: 15px 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 10px;
+      }
+
+      .side-nav:hover {
+        width: 100%;
+      }
+
+      .side-nav .intro {
+        justify-content: flex-start;
+        flex-shrink: 0;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
+
+      .side-nav .intro .nav-text-group {
+        opacity: 1;
+        margin-left: 15px;
+      }
+
+      .side-nav ul {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0;
+        margin-top: 22px;
+        opacity: 0;
+        flex-shrink: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+      }
+
+      .side-nav ul li {
+        margin: 0;
+      }
+
+      .side-nav ul li p {
+        display: none;
+      }
+
+      .side-nav ul li img {
+        min-width: 25px;
+        margin: 0;
+      }
+
+      .side-nav:has(#mobile-toggle:checked) {
+        height: 135px;
+      }
+
+      .side-nav:has(#mobile-toggle:checked) ul {
+        opacity: 1;
+        transition-delay: 0.15s;
+        pointer-events: auto;
+      }
+
+      .side-nav:has(#mobile-toggle:checked) .intro {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        padding: 5px 10px;
+      }
+
+      .side-nav:hover .intro {
+        background: transparent;
+        backdrop-filter: none;
       }
 
       footer {
@@ -546,13 +665,14 @@
         </article>
 
         <div class="side-nav">
-            <div class ="intro">
+          <input type="checkbox" id="mobile-toggle" style="display:none;">
+            <label class ="intro" for="mobile-toggle">
               <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/stars.svg" class="star-img" alt="Star Icon">
-              <div>
-                <h4>Ren & Sebastian</h4>
-                <p>Meet the crew!</p>
-              </div>
-              </div>
+              <span class="nav-text-group">
+                <strong>Ren & Sebastian</strong>
+                <span>Meet the crew!</span>
+              </span>
+            </label>
               <ul>
                 <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/person-vcard-fill.svg" alt=""><p>About Us</p></li>
                 <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/linkedin.svg" alt=""><p>LinkedIn</p></li>

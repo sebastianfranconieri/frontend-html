@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sauco films | cinematic production portfolio</title>
+    <!-- Google Fonts: Lacquer & Helvetica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lacquer&display=block" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset & Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-color: #000000;
+            --text-color: #ffffff;
+            --border-color: #ffffff;
+            --accent-color: #ff5e1a;
+            --accent-gradient: linear-gradient(135deg, rgba(255, 94, 26, 0.28) 0%, rgba(10, 10, 10, 0.94) 70%);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Helvetica', Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Typography - General Headings use Lacquer and lowercase */
+        h1, h2, h3, .brand-name {
+            font-family: 'Lacquer', sans-serif;
+            letter-spacing: 1px;
+            text-transform: lowercase;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;
+            background-color: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            z-index: 1000;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-family: 'Lacquer', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            text-transform: lowercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            text-transform: lowercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.75)), url('https://www.sae.edu/gbr/wp-content/uploads/sites/7/2023/12/Future-of-Film-SAE-1-1920x1256.jpg') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 7rem);
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+            animation: fadeIn 1.5s ease-out;
+            text-transform: lowercase;
+        }
+
+        .hero p {
+            max-width: 700px;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: #dddddd;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: lowercase;
+            letter-spacing: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            border: 1px solid var(--border-color);
+            padding: 25px;
+            background-color: #050505;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border: none;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--text-color);
+            text-transform: lowercase;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #bbbbbb;
+        }
+
+        /* Portfolio Wrapper & Layout */
+        .portfolio-section-wrap {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .portfolio-layout-grid {
+            display: grid;
+            grid-template-columns: 1fr 80px;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .portfolio-main-article {
+            position: relative;
+            border: 1px solid var(--border-color);
+            padding: 60px;
+            background-color: #050505;
+            margin-left: 36px;
+        }
+
+        /* Continuous Film Sprocket Strip on Left of Article */
+        .film-sprocket-strip {
+            position: absolute;
+            left: -36px;
+            top: 0;
+            bottom: 0;
+            width: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px 0;
+            pointer-events: none;
+        }
+
+        .sprocket-hole {
+            width: 16px;
+            height: 22px;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            border-radius: 2px;
+        }
+
+        .portfolio-main-article h2 {
+            font-family: 'Lacquer', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            text-transform: lowercase;
+        }
+
+        .article-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+            border: none;
+            padding: 0;
+            background: transparent;
+        }
+
+        .article-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .article-row img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border: none;
+        }
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .flex p {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        /* Aside Navigation Panel (Overlay Hover on Desktop) */
+        .portfolio-sidebar-rail {
+            position: sticky;
+            top: 110px;
+            width: 80px;
+            height: calc(100vh - 160px);
+            min-height: 600px;
+            background: var(--accent-gradient);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            padding: 22px 14px;
+            overflow: hidden;
+            transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            z-index: 100;
+        }
+
+        .portfolio-sidebar-rail:hover {
+            width: 280px;
+            box-shadow: -20px 0 50px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(255, 94, 26, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .sidebar-header-label {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 10px 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            margin-bottom: 22px;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+
+        .star-img {
+            width: 24px;
+            height: 24px;
+            filter: invert(1);
+            flex-shrink: 0;
+        }
+
+        .nav-text-group {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+        }
+
+        .portfolio-sidebar-rail:hover .nav-text-group {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        .nav-text-group strong {
+            font-size: 0.92rem;
+            color: var(--text-color);
+            text-transform: none; /* Allows proper capitalization */
+        }
+
+        .nav-text-group span {
+            font-size: 0.74rem;
+            color: var(--accent-color);
+            text-transform: none;
+        }
+
+        .sidebar-menu-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            overflow-y: auto;
+        }
+
+        .sidebar-menu-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 10px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background 0.25s ease;
+        }
+
+        .sidebar-menu-item:hover {
+            background: rgba(255, 94, 26, 0.24);
+        }
+
+        .sidebar-menu-item img {
+            width: 20px;
+            height: 20px;
+            filter: invert(1);
+            flex-shrink: 0;
+        }
+
+        .sidebar-menu-item p {
+            font-size: 0.88rem;
+            color: var(--text-color);
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: none;
+            text-transform: none; /* Ensures standard capitalized titles */
+        }
+
+        .portfolio-sidebar-rail:hover .sidebar-menu-item p {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+        }
+
+        /* Footer */
+        .site-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 60px 40px 30px 40px;
+            background-color: #000000;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+
+        .footer-logo {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+
+        .footer-email {
+            font-size: 0.95rem;
+            color: #aaaaaa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-email:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 8px;
+        }
+
+        .footer-links-group {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-btn-link {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-family: 'Helvetica', Arial, sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            padding: 0;
+            text-transform: lowercase;
+        }
+
+        .footer-btn-link:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-copyright {
+            font-size: 0.85rem;
+            color: #888888;
+            text-transform: lowercase;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .portfolio-main-article {
+                margin-left: 28px;
+            }
+            .film-sprocket-strip {
+                left: -26px;
+            }
+            .sprocket-hole {
+                width: 12px;
+                height: 18px;
+                border-width: 1.5px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 0 20px;
+            }
+
+            .brand-name {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .services-section,
+            .portfolio-section-wrap {
+                padding: 60px 15px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-layout-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .portfolio-main-article {
+                padding: 30px 15px;
+                margin-left: 22px;
+            }
+
+            .film-sprocket-strip {
+                left: -20px;
+            }
+
+            .article-row {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Mobile Sidebar: Fixed constant size without shrinking */
+            .portfolio-sidebar-rail {
+                position: relative;
+                top: 0;
+                width: 100%;
+                height: 64px;
+                min-height: 0;
+                padding: 12px 16px;
+                overflow: hidden;
+                transition: height 0.4s ease, border-color 0.3s ease;
+                cursor: pointer;
+            }
+
+            .portfolio-sidebar-rail.mobile-open {
+                height: 220px;
+                border-color: var(--accent-color);
+            }
+
+            .portfolio-sidebar-rail:hover {
+                width: 100%;
+            }
+
+            .sidebar-header-label {
+                display: flex;
+                margin-bottom: 16px;
+                padding: 0;
+                border: none;
+            }
+
+            .portfolio-sidebar-rail .nav-text-group {
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+            }
+
+            .sidebar-menu-list {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                gap: 8px;
+                opacity: 0;
+                transform: translateY(10px);
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                pointer-events: none;
+            }
+
+            .portfolio-sidebar-rail.mobile-open .sidebar-menu-list {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: auto;
+            }
+
+            .sidebar-menu-item {
+                flex-direction: column;
+                align-items: center;
+                gap: 4px;
+                padding: 4px;
+                text-align: center;
+                flex: 1 1 calc(33.333% - 8px);
+                max-width: calc(33.333% - 8px);
+            }
+
+            .sidebar-menu-item img {
+                width: 18px;
+                height: 18px;
+            }
+
+            .sidebar-menu-item p {
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+                font-size: 0.62rem;
+                line-height: 1.1;
+                white-space: normal;
+                text-align: center;
+                text-transform: none;
+            }
+
+            .site-footer {
+                padding: 40px 20px 24px;
+            }
+
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .footer-left {
+                align-items: center;
+            }
+
+            .footer-right {
+                align-items: center;
+                gap: 12px;
+            }
+
+            .footer-links-group {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="header-left">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="sauco films logo" class="header-logo">
+            <span class="brand-name">sauco films</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#services">services</a></li>
+                <li><a href="#portfolio">portfolio</a></li>
+                <li><a href="#footer">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>sauco films</h1>
+        <p>Film production company specializing in creating captivating visual stories. We bring your ideas to life with creativity and professionalism.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://www.albema-france.fr/data/uploads/2021/07/pre-production.jpg" alt="pre-production" class="service-img">
+                <h3>pre-production</h3>
+                <p>Planning and preparation phase for the film project.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://www.adorama.com/alc/wp-content/uploads/2024/07/Ready-for-a-Cinema-Camera_Heres-What-to-Look-For.jpg" alt="production" class="service-img">
+                <h3>production</h3>
+                <p>Execution phase where the film is shot under the direction of the filmmaker.</p>
+            </div>
+            <div class="service-card">
+                <img src="https://www.vidyard.com/wp-content/uploads/video-post-production-1982x1114-2.jpg" alt="post-production" class="service-img">
+                <h3>post-production</h3>
+                <p>Post-production phase where the film is edited and enhanced.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio & Sidebar Section -->
+    <section id="portfolio" class="portfolio-section-wrap">
+        <div class="portfolio-layout-grid">
+            
+            <!-- Main Article Portfolio Content with Continuous Film Sprocket Strip -->
+            <article class="portfolio-main-article">
+                <!-- Continuous Film Sprocket Cutout Strip -->
+                <div class="film-sprocket-strip">
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                    <div class="sprocket-hole"></div>
+                </div>
+
+                <h2>our portfolio</h2>
+
+                <!-- Row 1 -->
+                <div class="article-row">
+                    <div class="flex">
+                        <p>Our new documentary about the impact of climate change on coastal communities explores the challenges and solutions facing these vulnerable ecosystems. This project highlights the urgent need for sustainable practices and community resilience. The film showcases the stories of individuals and communities affected by these environmental changes.</p>
+                        <p>We are proud to present our latest short film, which delves into the complexities of human relationships and the power of empathy. Through compelling storytelling and stunning visuals, we aim to evoke deep emotional responses from our audience.</p>
+                        <p>In our upcoming feature film, we explore the intersection of technology and society, examining how advancements in artificial intelligence are reshaping our world. This thought-provoking narrative challenges viewers to consider the ethical implications of innovation. This is an exciting opportunity for us to work with a talented artist and bring their vision to life and create a memorable cinematic experience for our audience.</p>
+                    </div>
+                    <div>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Film_strip.jpg?utm_source=fr.wikipedia.org&utm_campaign=index&utm_content=original" alt="film negative image">
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="article-row" style="grid-template-columns: 1fr;">
+                    <div class="flex">
+                        <p>We are excited to announce our collaboration with a renowned director on an upcoming feature film that promises to captivate audiences with its unique narrative and visual style. Stay tuned for more updates on this highly anticipated project. This is an exciting opportunity for us to work with a talented artist and bring their vision to life. On top of that, we are committed to delivering exceptional content that resonates with audiences worldwide.</p>
+                        <p>Our team is dedicated to exploring new storytelling techniques and pushing the boundaries of traditional filmmaking. We continuously seek innovative ways to engage viewers and create memorable cinematic experiences that leave a lasting impact. In addition to our film projects, we are also committed to supporting emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers. We invite you to explore our portfolio and discover the diverse range of projects we have undertaken. From documentaries to feature films, our work reflects our passion for storytelling and our dedication to delivering exceptional content that resonates with audiences worldwide.</p>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="article-row">
+                    <div>
+                        <img src="https://glcoverage.com/wp-content/uploads/2024/07/pexels-kyleloftusstudios-3379934.jpg" alt="camera operator on set">
+                    </div>
+                    <div class="flex">
+                        <p>We are thrilled to share our latest collaboration with a talented cinematographer on an upcoming short film that explores the complexities of human emotions and relationships. This project promises to deliver a visually stunning and emotionally resonant experience for audiences.</p>
+                        <p>Our team is committed to delivering high-quality content that pushes the boundaries of traditional filmmaking. We continuously explore new techniques and technologies to enhance our storytelling capabilities and create immersive cinematic experiences.</p>
+                        <p>In addition to our film projects, we are also dedicated to supporting the growth and development of emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
+                    </div>
+                </div>
+
+            </article>
+
+            <!-- Aside Navigation Rail (Overlay Hover on Desktop, Tap Toggle on Mobile) -->
+            <aside class="portfolio-sidebar-rail" id="mobileAsideToggle" onclick="this.classList.toggle('mobile-open')">
+                <div class="sidebar-header-label">
+                    <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/stars.svg" class="star-img" alt="star icon">
+                    <div class="nav-text-group">
+                        <strong>Ren and Sebastian</strong>
+                        <span>Meet the crew!</span>
+                    </div>
+                </div>
+                <ul class="sidebar-menu-list">
+                    <li class="sidebar-menu-item">
+                        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/person-vcard-fill.svg" alt="about us">
+                        <p>About Us</p>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/linkedin.svg" alt="linkedin">
+                        <p>Linkedin</p>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/envelope-fill.svg" alt="email">
+                        <p>Email</p>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/telephone-fill.svg" alt="phone">
+                        <p>Phone</p>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/chat-quote-fill.svg" alt="customer stories">
+                        <p>Customer Stories</p>
+                    </li>
+                    <li class="sidebar-menu-item">
+                        <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/camera-reels-fill.svg" alt="become a producer">
+                        <p>Become a Producer</p>
+                    </li>
+                </ul>
+            </aside>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="site-footer">
+        <div class="footer-top">
+            <div class="footer-left">
+                <a href="#" class="footer-brand">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvPZtR8DUdSSwCp-XM8-ffMLYMO7aakQoI0dziuNyD0Q&s=10" alt="logo" class="footer-logo">
+                    <span class="brand-name" style="font-size: 1.2rem;">sauco films</span>
+                </a>
+                <a href="mailto:contact@saucofilms.com" class="footer-email">contact@saucofilms.com</a>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links-group">
+                    <a href="#footer" class="footer-btn-link">privacy policy</a>
+                    <a href="#footer" class="footer-btn-link">terms and conditions</a>
+                </div>
+                <span class="footer-copyright">&copy; 2026 sauco films.</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

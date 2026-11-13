@@ -257,6 +257,11 @@
       transition: all 0.5s ease;
     }
 
+    .side-nav {
+      flex-shrink: 0;
+      transition: width 0.5s ease, margin-left 0.5s ease;
+    }
+
     .side-nav ul{
       list-style: none;
       padding: 15px 0;
@@ -283,11 +288,12 @@
       white-space: nowrap;
       opacity: 0;
       transition: all 0.5s ease;
-
     }
 
     .side-nav:hover{
       width: 225px;
+      margin-left: -145px;
+      box-shadow: -10px 10px 25px rgba(0, 0, 0, 0.8);
     }
 
     .side-nav:hover .intro{
@@ -301,10 +307,12 @@
       display: block;
     }
 
-    .side-nav:hover .intro div,
+    .side-nav:hover .intro .nav-text-group,
     .side-nav:hover ul li p{
       opacity: 1;
       transition-delay: 0.1s;
+      display: flex;
+      flex-direction: column;
     }
 
     .side-nav:hover ul li img{
@@ -429,6 +437,7 @@
 
       .side-nav:hover {
         width: 100%;
+        margin-left: 0;
       }
 
       .side-nav .intro {
@@ -462,7 +471,7 @@
       }
 
       .side-nav ul li p {
-        display: none;
+        display: none !important;
       }
 
       .side-nav ul li img {
@@ -483,12 +492,13 @@
       .side-nav:has(#mobile-toggle:checked) .intro {
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(5px);
-        padding: 5px 10px;
       }
 
-      .side-nav:hover .intro {
-        background: transparent;
-        backdrop-filter: none;
+      .side-nav:hover .intro .nav-text-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 4px;
       }
 
       footer {
@@ -649,9 +659,7 @@
                 </div>
                 <div class="flex">
                     <p>We are excited to announce our collaboration with a renowned director on an upcoming feature film that promises to captivate audiences with its unique narrative and visual style. Stay tuned for more updates on this highly anticipated project. This is an exciting opportunity for us to work with a talented artist and bring their vision to life. On top of that, we are committed to delivering exceptional content that resonates with audiences worldwide.</p>
-                    <p>Our team is dedicated to exploring new storytelling techniques and pushing the boundaries of traditional filmmaking. We continuously seek innovative ways to engage viewers and create memorable cinematic experiences that leave a lasting impact.</p>
-                    <p>In addition to our film projects, we are also committed to supporting emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers.</p>
-                    <p>We invite you to explore our portfolio and discover the diverse range of projects we have undertaken. From documentaries to feature films, our work reflects our passion for storytelling and our dedication to delivering exceptional content that resonates with audiences worldwide.</p> 
+                    <p>Our team is dedicated to exploring new storytelling techniques and pushing the boundaries of traditional filmmaking. We continuously seek innovative ways to engage viewers and create memorable cinematic experiences that leave a lasting impact. In addition to our film projects, we are also committed to supporting emerging filmmakers through mentorship programs and workshops. By sharing our expertise and resources, we aim to foster a vibrant community of creative talent and inspire the next generation of storytellers. We invite you to explore our portfolio and discover the diverse range of projects we have undertaken. From documentaries to feature films, our work reflects our passion for storytelling and our dedication to delivering exceptional content that resonates with audiences worldwide.</p> 
                 </div>
                 <div class="flex">
                     <img src="https://glcoverage.com/wp-content/uploads/2024/07/pexels-kyleloftusstudios-3379934.jpg" alt="Camera Operator on set">
@@ -664,8 +672,8 @@
             </div>
         </article>
 
-        <div class="side-nav">
-          <input type="checkbox" id="mobile-toggle" style="display:none;">
+        <aside class="side-nav">
+          <input type="chthen eckbox" id="mobile-toggle" style="display:none;">
             <label class ="intro" for="mobile-toggle">
               <img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/stars.svg" class="star-img" alt="Star Icon">
               <span class="nav-text-group">
@@ -681,7 +689,7 @@
                 <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/chat-quote-fill.svg" alt=""><p>Customer Stories</p></li>
                 <li><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/icons/camera-reels-fill.svg" alt=""><p>Become a Producer</p></li>
               </ul>
-            </div>
+            </aside>
     </section>
   </main>
 
